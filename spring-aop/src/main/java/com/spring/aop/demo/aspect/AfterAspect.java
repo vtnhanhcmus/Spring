@@ -14,12 +14,12 @@ public class AfterAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @After(value = "com.spring.aop.demo.aspect.JoinPointConfig.repositoryExcute()")
+    @After(value = "com.spring.aop.demo.aspect.JoinPointConfig.repositoryExecute() && com.spring.aop.demo.aspect.JoinPointConfig.serviceExecute()")
     public void after(JoinPoint joinPoint){
         logger.info("After execution {} ", joinPoint);
     }
 
-    @AfterReturning(value = "com.spring.aop.demo.aspect.JoinPointConfig.repositoryExcute()", returning = "result")
+    @AfterReturning(value = "com.spring.aop.demo.aspect.JoinPointConfig.repositoryExecute() && com.spring.aop.demo.aspect.JoinPointConfig.serviceExecute()", returning = "result")
     public void afterReturning(JoinPoint joinPoint, Object result){
         logger.info("After return execute {} ", joinPoint);
         logger.info("After return result {}", result);

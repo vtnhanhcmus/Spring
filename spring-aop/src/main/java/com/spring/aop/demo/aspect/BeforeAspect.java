@@ -13,7 +13,7 @@ public class BeforeAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("com.spring.aop.demo.aspect.JoinPointConfig.repositoryExcute()")
+    @Before("com.spring.aop.demo.aspect.JoinPointConfig.repositoryExecute()")
     public void before(JoinPoint joinPoint){
         logger.info("before execute function {}", joinPoint);
     }

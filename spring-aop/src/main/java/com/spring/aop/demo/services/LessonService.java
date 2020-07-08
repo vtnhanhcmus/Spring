@@ -1,5 +1,6 @@
 package com.spring.aop.demo.services;
 
+import com.spring.aop.demo.anotations.TimeExecute;
 import com.spring.aop.demo.repositories.LessonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ public class LessonService {
     @Autowired
     private LessonRepository lessonRepository;
 
+    @TimeExecute
     public String showLesson(){
         logger.info("processing lesson service ");
         return lessonRepository.print();

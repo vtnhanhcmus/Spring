@@ -1,5 +1,6 @@
 package com.spring.aop.demo.services;
 
+import com.spring.aop.demo.anotations.TimeExecute;
 import com.spring.aop.demo.repositories.StudentRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
+    @TimeExecute
     public String showStudent(){
         logger.info("processing student service ");
         return studentRepository.print();
